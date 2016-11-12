@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ajax Dictionary </title>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="searchword" />
+            <input id="clicko" type="submit" value="Search"/>
+        </form>    
+            <script type="text/javascript">
+              var word=document.getElementById("searchword").value;
+              var click=document.getElementById("clicko");
+              click.onclick=clickfunction;
+              function clickfunction(){
+                  var xhttp= new XMLHttpRequest();
+                  xhttp.onreadystatechange()= function(){
+                      if(this.readyState== xmlhttpRequest && this.status== 200){
+                          alert(xmlhttp.responseText);
+                      }
+                      else{
+                          alert("Trump is the president and we found a problem with your request, the horror");
+                      }
+                  };
+                  xmlhttp.open("GET","request.php?q=definition",true);
+                  xmlhttp.send();
+              }
+            </script>
+        
+    </body>
+</html>
+
