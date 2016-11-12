@@ -6,13 +6,13 @@
     <body>
         <form>
             <input type="text" id="searchword" />
-            <input id="clicko" type="submit" value="Search"/>
-            <br><input id="getall" type="submit" value="Get All Definitions"/>
+            <input type="text" name=""/> id="clicko" type="submit" value="Search" />
+            <br><input id="getall" type="submit" value="Get All Definitions" />
             <br>
             <h3>Result</h3>
             <div id="result"></div>
         </form>    
-            <script type="text/javascript">
+            <script>
                 window.onload=function(){
                     var word=document.getElementById("searchword").value;
                     var click=document.getElementById("clicko");
@@ -39,7 +39,13 @@
                       xmlhttp.send();
                     }
                     
-                    
+                    function alldefinitions(){
+                       clickfunction().onreadystatechange= clickfunction;
+                       clickfunction().open("GET","request.php?q=" +res.getAttribute('all'));
+                       clickfunction().send();
+                    }
+       
+
             </script>
     </body>
 </html>
